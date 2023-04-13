@@ -1,10 +1,17 @@
 import { useEffect } from "react";
+import { Route, Routes } from "react-router-dom";
 import { ContactForm } from "./ContactForm/contactForm";
 import { Contacts } from "./Contacts/contacts";
 import { Filter } from "./Filter/filter";
 import { fetchContacts } from "redux/operations";
 import { useDispatch, useSelector } from "react-redux";
 import { getContacts, selectIsLoading, selectError } from "redux/selectors";
+
+
+import { Home } from '../pages/Home';
+import { Login } from '../pages/Login';
+import { Register } from '../pages/Register';
+import { ContactsPage } from '../pages/ContactsPage';
 
 export function App() {
   const dispatch = useDispatch();
@@ -18,6 +25,17 @@ export function App() {
 
   return (
     <div>
+      <div>
+      {/* <AppBar /> */}
+
+      <Routes>
+        <Route exact path="/" component={Home} />
+        <Route path="/register" component={Register} />
+        <Route path="/login" component={Login} />
+        <Route path="/contacts" component={ContactsPage} />
+        </Routes>
+        </div>
+
       <h2>Phonebook</h2>
       <ContactForm />
       <Filter />
