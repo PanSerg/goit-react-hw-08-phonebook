@@ -5,8 +5,7 @@ import { Contacts } from "./Contacts/contacts";
 import { Filter } from "./Filter/filter";
 import { fetchContacts } from "redux/operations";
 import { useDispatch, useSelector } from "react-redux";
-import { getContacts, selectIsLoading, selectError } from "redux/selectors";
-
+import { selectContacts, selectIsLoading, selectError } from "redux/selectors";
 
 import { Home } from '../pages/Home';
 import { Login } from '../pages/Login';
@@ -15,7 +14,7 @@ import { ContactsPage } from '../pages/ContactsPage';
 
 export function App() {
   const dispatch = useDispatch();
-  const contacts = useSelector(getContacts);
+  const contacts = useSelector(selectContacts);
   const isLoading = useSelector(selectIsLoading);
   const error = useSelector(selectError);
 
