@@ -7,7 +7,7 @@ import { Filter } from '../components/Filter';
 import { Contacts } from "components/Contacts/contacts";
 import PropTypes from 'prop-types';
 
-export default function ContactsPage() {
+export const ContactsPage = () => {
     const dispatch = useDispatch();
     const contacts = useSelector(selectContacts);
     const isLoading = useSelector(selectIsLoading);
@@ -46,3 +46,5 @@ ContactsPage.propTypes = {
         })
     ),
 };
+
+// export default ContactsPage;

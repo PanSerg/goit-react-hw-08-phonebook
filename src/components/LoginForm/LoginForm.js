@@ -4,40 +4,40 @@ import { useDispatch } from "react-redux";
 import { logIn } from 'redux/auth/operations';
 
 export const LoginForm = () => {
-    const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
-    return (
-      <div>
-        <Formik
-          initialValues={{
-            email: '',
-            password: '',
-          }}
-          onSubmit={(values, { resetForm }) => {
-            dispatch(logIn(values));
-            resetForm();
-          }}
-        >
-          <Form>
-            <label htmFor="email">Email:</label>
-                <Field
-                    type="email"
-                    name="email"
-                    placeholder="Enter email"
-                />
-                <ErrorMessage name="email" component="span"></ErrorMessage>
+  return (
+    <div>
+      <Formik
+        initialValues={{
+          email: '',
+          password: '',
+        }}
+        onSubmit={(values, { resetForm }) => {
+          dispatch(logIn(values));
+          resetForm();
+        }}
+      >
+        <Form>
+          <label htmFor="email">Email:</label>
+          <Field
+            type="email"
+            name="email"
+            placeholder="Enter email"
+          />
+          <ErrorMessage name="email" component="span"></ErrorMessage>
 
-            <label htmlFor="password">Password:</label>
-            <Field
-              type="password"
-              name="password"
-              placeholder="Enter password"
-            />
-                <ErrorMessage name="password" component="span"></ErrorMessage>
+          <label htmlFor="password">Password:</label>
+          <Field
+            type="password"
+            name="password"
+            placeholder="Enter password"
+          />
+          <ErrorMessage name="password" component="span"></ErrorMessage>
                     
-            <button type="submit">Register</button>
-          </Form>
-        </Formik>
-      </div>
-    );
-}
+          <button type="submit">Register</button>
+        </Form>
+      </Formik>
+    </div>
+  );
+};

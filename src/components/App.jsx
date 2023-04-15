@@ -9,7 +9,7 @@ import { selectContacts, selectIsLoading, selectError } from "redux/selectors";
 
 import { Home } from '../pages/Home';
 import { Login } from '../pages/Login';
-import { Register } from '../pages/Register';
+import { Register } from '../pages';
 import { ContactsPage } from '../pages/ContactsPage';
 
 export function App() {
