@@ -37,4 +37,4 @@ export const deleteContact = createAsyncThunk(
             return thunkAPI.rejectWithValue(error.message);
         }
     }
-)
+);
