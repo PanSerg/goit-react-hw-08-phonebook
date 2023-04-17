@@ -14,32 +14,26 @@ import { Header } from "./Header/header";
 
 export function App() {
   const dispatch = useDispatch();
-  const contacts = useSelector(selectContacts);
-  const isLoading = useSelector(selectIsLoading);
-  const error = useSelector(selectError);
+  // const contacts = useSelector(selectContacts);
+  // const isLoading = useSelector(selectIsLoading);
+  // const error = useSelector(selectError);
 
   useEffect(() => {
     dispatch(fetchContacts());
   }, [dispatch]);
 
-  
+
   return (
-    <div>
-      <Routes>
-        <Route exact path="/" component={<Header/>} />
-        <Route exact index component={Home} />
+    
+    <Routes>
+      <Route path="/" component={<Header />} >
+        <Route index component={Home} />
         <Route path="/register" component={Register} />
         <Route path="/login" component={Login} />
         <Route path="/contacts" component={ContactsPage} />
-      </Routes>
+      </Route>
+    </Routes>
         
-      <h2>Phonebook</h2>
-      <ContactForm />
-      <Filter />
-      <Contacts
-        value={contacts}
-        type="text" />
-        {isLoading && !error && <h2>Loading...</h2>}
-    </div>
+     
   );
 };
