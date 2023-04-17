@@ -1,39 +1,32 @@
 import { useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
-import { ContactForm } from "./ContactForm/contactForm";
-import { Contacts } from "./Contacts/contacts";
-import { Filter } from "./Filter/filter";
 import { fetchContacts } from "redux/operations";
-import { useDispatch, useSelector } from "react-redux";
-import { selectContacts, selectIsLoading, selectError } from "redux/selectors";
+import { useDispatch } from "react-redux";
 import { Home } from '../pages/Home';
 import { Login } from '../pages/Login';
 import { Register } from '../pages/Register';
 import { ContactsPage } from '../pages/ContactsPage';
 import { Header } from "./Header/header";
+import { useAuth } from "hooks";
 
 export function App() {
   const dispatch = useDispatch();
-  // const contacts = useSelector(selectContacts);
-  // const isLoading = useSelector(selectIsLoading);
-  // const error = useSelector(selectError);
+  const { getIsRefreshing } = useAuth();
 
   useEffect(() => {
     dispatch(fetchContacts());
   }, [dispatch]);
 
-
-  return (
-    
+  return getIsRefreshing ? (
+    <b>Refreshing user...</b>
+  ) : (
     <Routes>
       <Route path="/" component={<Header />} >
-        <Route index component={Home} />
-        <Route path="/register" component={Register} />
-        <Route path="/login" component={Login} />
-        <Route path="/contacts" component={ContactsPage} />
+        <Route index component={<Home/>} />
+        <Route path="/register" component={<Register/>} />
+        <Route path="/login" component={<Login/>} />
+        <Route path="/contacts" component={<ContactsPage/>} />
       </Route>
-    </Routes>
-        
-     
+    </Routes> 
   );
 };
