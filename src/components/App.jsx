@@ -22,6 +22,7 @@ export function App() {
     dispatch(fetchContacts());
   }, [dispatch]);
 
+  
   return (
     <div>
       <Routes>
