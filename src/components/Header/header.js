@@ -1,6 +1,5 @@
 import { Suspense } from "react";
-
-const { NavLink, Outlet } = require("react-router-dom");
+import { NavLink, Outlet } from "react-router-dom";
 
 export const Header = () => {
     return (
