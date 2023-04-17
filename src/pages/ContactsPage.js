@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchContacts } from "redux/operations";
 import { selectContacts, selectError, selectIsLoading } from "redux/selectors";
 import { ContactForm } from "components/ContactForm/contactForm";
-import { Filter } from '../components/Filter';
+import { Filter } from '../components/Filter/filter';
 import { Contacts } from "components/Contacts/contacts";
 import PropTypes from 'prop-types';
 

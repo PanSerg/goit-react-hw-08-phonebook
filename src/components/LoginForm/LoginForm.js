@@ -1,7 +1,7 @@
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import React from "react";
 import { useDispatch } from "react-redux";
-import { logIn } from 'redux/auth/operations';
+import { logIn } from 'redux/auth/auth-operations';
 
 export const LoginForm = () => {
   const dispatch = useDispatch();
