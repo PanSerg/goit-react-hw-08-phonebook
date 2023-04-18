@@ -21,11 +21,11 @@ export function App() {
     <b>Refreshing user...</b>
   ) : (
     <Routes>
-      <Route path="/" component={<Header />} >
-        <Route index component={<Home/>} />
-        <Route path="/register" component={<Register/>} />
-        <Route path="/login" component={<Login/>} />
-        <Route path="/contacts" component={<ContactsPage/>} />
+      <Route path="/" element={<Header />} >
+        <Route index element={<Home/>} />
+        <Route path="/register" element={<Register/>} />
+        <Route path="/login" element={<Login/>} />
+        <Route path="/contacts" element={<ContactsPage/>} />
       </Route>
     </Routes> 
   );
