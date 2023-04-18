@@ -1,11 +1,11 @@
 import React from "react";
 import { useDispatch, useSelector } from 'react-redux';
 import { deleteContact } from "redux/operations";
-import { ContactStyle } from "./contacts.styled";
+import { ContactStyle } from "./contacts.Styled";
 import { ButtonsStyle } from "components/buttonsStyle.styled";
 import PropTypes from 'prop-types';
 
-export const Contacts = () => {
+export const ContactsList = () => {
     const contacts = useSelector(state => state.contacts.items);
     const filter = useSelector(state => state.filter);
     const dispatch = useDispatch();
@@ -40,7 +40,7 @@ export const Contacts = () => {
     );
 };
 
-Contacts.propTypes = {
+ContactsList.propTypes = {
   contacts: PropTypes.arrayOf(
     PropTypes.shape({
       name: PropTypes.string.isRequired,

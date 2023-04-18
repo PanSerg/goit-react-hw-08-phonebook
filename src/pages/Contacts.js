@@ -4,10 +4,10 @@ import { fetchContacts } from "redux/operations";
 import { selectContacts, selectError, selectIsLoading } from "redux/selectors";
 import { ContactForm } from "components/ContactForm/contactForm";
 import { Filter } from '../components/Filter/filter';
-import { Contacts } from "components/Contacts/contacts";
+import { ContactsList } from '../components/ContactsList/contactsList';
 import PropTypes from 'prop-types';
 
-export const ContactsPage = () => {
+export const Contacts = () => {
     const dispatch = useDispatch();
     const contacts = useSelector(selectContacts);
     const isLoading = useSelector(selectIsLoading);
@@ -25,7 +25,7 @@ export const ContactsPage = () => {
                 {contacts.length ? (
                     <>
                        <Filter />
-                       <Contacts />
+                       <ContactsList />
                     </>
                 ) : (
                         <p>No any contacts in phonebook</p>
@@ -37,7 +37,7 @@ export const ContactsPage = () => {
     );
 };
 
-ContactsPage.propTypes = {
+Contacts.propTypes = {
     contacts: PropTypes.arrayOf(
         PropTypes.shape({
             id: PropTypes.string.isRequired,
@@ -47,4 +47,4 @@ ContactsPage.propTypes = {
     ),
 };
 
-// export default ContactsPage;
+// export default Contacts;
