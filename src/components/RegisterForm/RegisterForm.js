@@ -19,16 +19,33 @@ export function RegisterForm() {
         }}
       >
         <Form>
-          <label htmlFor="name">User name:</label>
-          <Field type="text" name="name" placeholder="Enter user name" />
+          <label>
+            User name:
+            <Field type="text"
+              name="name"
+              placeholder="Enter user name"
+            />
+          </label>
           <ErrorMessage name="name" component="span"></ErrorMessage>
 
-          <label htmlFor="email">Email:</label>
-          <Field type="email" name="email" placeholder="Enter email" />
+          <label>
+            Email:
+            <Field
+              type="email"
+              name="email"
+              placeholder="Enter email"
+            />
+          </label>
           <ErrorMessage name="email" component="span"></ErrorMessage>
 
-          <label htmlFor="password">Password:</label>
-          <Field type="password" name="password" placeholder="Enter password" />
+          <label>
+            Password:
+            <Field
+              type="password"
+              name="password"
+              placeholder="Enter password"
+            />
+          </label>
           <ErrorMessage name="password" component="span"></ErrorMessage>
 
           <button type="submit">Register</button>
