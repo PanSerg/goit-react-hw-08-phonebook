@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { StyleForm } from './contactForm.styled';
 import { ButtonsStyle } from 'components/buttonsStyle.styled';
 import { useDispatch, useSelector } from 'react-redux';
 import { addContact } from 'redux/operations';
@@ -9,8 +8,8 @@ import { nanoid } from 'nanoid';
 export const ContactForm = () => {
   const contact = useSelector(state => state.contacts.items);
   const dispatch = useDispatch();
-  const [name, newName] = useState('')
-  const [number, newNumber] = useState('')
+  const [name, newName] = useState('');
+  const [number, newNumber] = useState('');
 
   const handleChange = evt => {
     const { value, name } = evt.target;
@@ -43,7 +42,7 @@ export const ContactForm = () => {
   };
 
     return (
-      <StyleForm onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit}>
         <label>
           <h2>Name</h2>
           <input
@@ -72,6 +71,6 @@ export const ContactForm = () => {
           />
         </label>
         <ButtonsStyle type="submit">add contact</ButtonsStyle>
-      </StyleForm>
+      </form>
     );
 };

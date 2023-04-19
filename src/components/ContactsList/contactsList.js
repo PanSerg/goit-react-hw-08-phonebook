@@ -31,9 +31,9 @@ export const ContactsList = () => {
                         <p>Number:</p>
                         <span>{number}</span>
                         <ButtonsStyle
-                            onClick={() => dispatch(deleteContact(id))
-                            }
-                        >Delete</ButtonsStyle>
+                            onClick={() => dispatch(deleteContact(id))}>
+                            Delete
+                        </ButtonsStyle>
                     </li>
                 ))}
             </ul>
