@@ -3,11 +3,12 @@ import { useDispatch, useSelector } from 'react-redux';
 import { deleteContact } from "redux/operations";
 import { ContactStyle } from "./contacts.Styled";
 import { ButtonsStyle } from "components/buttonsStyle.styled";
+import { selectFilterValue, selectContacts } from 'redux/selectors';
 import PropTypes from 'prop-types';
 
 export const ContactsList = () => {
-    const contacts = useSelector(state => state.contacts.items);
-    const filter = useSelector(state => state.filter);
+    const contacts = useSelector(selectContacts);
+    const filter = useSelector(selectFilterValue);
     const dispatch = useDispatch();
 
     const filterRenderValue = () => {

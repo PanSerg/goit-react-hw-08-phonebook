@@ -1,10 +1,14 @@
 import { Suspense } from "react";
 import { NavLink, Outlet } from "react-router-dom";
 import { Container } from "@mui/material";
+import { CssBaseline } from '@mui/material';
+import { Footer } from "components/Footer/footer";
 
 export const Layout = () => {
     return (
-      <header>
+      <>
+        <CssBaseline />
+      
         <NavLink to="/">Home Page</NavLink>
         <NavLink to={'/register'}>Register</NavLink>
         <NavLink to={'/login'}>Log In</NavLink>
@@ -17,6 +21,7 @@ export const Layout = () => {
             <Outlet />
           </Suspense>
         </Container>
-      </header>
+        <Footer />
+      </>
     );
 };

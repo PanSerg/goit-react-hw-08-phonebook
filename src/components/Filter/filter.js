@@ -3,9 +3,10 @@ import { useSelector, useDispatch } from 'react-redux';
 import { filterContacts } from "redux/filterSlice";
 import PropTypes from 'prop-types';
 import { FilterStyle } from "./filter.Styled";
+import { selectFilterValue } from 'redux/selectors';
 
 export const Filter = () => {
-  const filter = useSelector(state => state.filters);
+  const filter = useSelector(selectFilterValue);
   const dispatch = useDispatch();
 
   const onFilter = e => {
