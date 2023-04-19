@@ -19,7 +19,7 @@ export const LoginForm = () => {
         }}
       >
         <Form>
-          <label htmFor="email">Email:</label>
+          <label>Email:</label>
           <Field
             type="email"
             name="email"
@@ -27,7 +27,7 @@ export const LoginForm = () => {
           />
           <ErrorMessage name="email" component="span"></ErrorMessage>
 
-          <label htmlFor="password">Password:</label>
+          <label>Password:</label>
           <Field
             type="password"
             name="password"
