@@ -3,6 +3,7 @@ import Box from '@mui/material/Box';
 import { LinkStyled } from '../LinkStyled';
 import Typography from '@mui/material/Typography';
 import { logOut } from 'redux/auth/auth-operations';
+import Button from '@mui/material/Button';
 
 export const AppBar = () => {
   const dispatch = useDispatch();
@@ -19,11 +20,18 @@ export const AppBar = () => {
       </LinkStyled>
 
       <LinkStyled to="/contacts">
-        <Typography variant="h6">Contacts</Typography>
+        <Typography variant="h6" sx={{ mr: 1 }}>
+          Contacts
+        </Typography>
       </LinkStyled>
-      <button type="button" onClick={() => dispatch(logOut())}>
+      <Button
+        variant="outlined"
+        sx={{ flexWrap: 'wrap', display: { xs: 'flex' } }}
+        type="button"
+        onClick={() => dispatch(logOut())}
+      >
         Logout
-      </button>
+      </Button>
     </Box>
   );
 };
