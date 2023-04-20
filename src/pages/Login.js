@@ -3,7 +3,7 @@ import Box from '@mui/material/Box';
 import Divider from '@mui/material/Divider';
 import Typography from '@mui/material/Typography';
 
-export const Login = () => {
+const Login = () => {
     return (
       <Box
         sx={{
@@ -22,4 +22,4 @@ export const Login = () => {
     );
 };
 
-// export default Login;
+export default Login;

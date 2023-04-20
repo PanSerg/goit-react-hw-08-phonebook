@@ -11,7 +11,7 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Divider from '@mui/material/Divider';
 
-export const Contacts = () => {
+const Contacts = () => {
     const dispatch = useDispatch();
     const contacts = useSelector(selectContacts);
     const isLoading = useSelector(selectIsLoading);
@@ -68,4 +68,4 @@ Contacts.propTypes = {
     ),
 };
 
-// export default Contacts;
+export default Contacts;

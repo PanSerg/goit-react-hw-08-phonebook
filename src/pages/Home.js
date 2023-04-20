@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const Home = () => (
+const Home = () => (
   <div style={styles.container}>
     <h1 style={styles.title}>
       Welcome to the contact book
@@ -22,3 +22,5 @@ const styles = {
         textAlign: 'center',
     },
 };
+
+export default Home;

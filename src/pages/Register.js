@@ -3,7 +3,7 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Divider from '@mui/material/Divider';
 
-export const Register = () => {
+const Register = () => {
   return (
     <Box
       sx={{
@@ -23,4 +23,4 @@ export const Register = () => {
   );
 };
 
-// export default Register;
+export default Register;

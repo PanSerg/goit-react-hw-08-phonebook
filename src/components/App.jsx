@@ -2,10 +2,6 @@ import { useEffect, lazy } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { refreshUser } from 'redux/auth/auth-operations';
 import { useDispatch } from 'react-redux';
-// import { Home } from '../pages/Home';
-// import { Login } from '../pages/Login';
-// import { Register } from '../pages/Register';
-// import { Contacts } from '../pages/Contacts';
 import { Layout } from './Layout/layout';
 import { useAuth } from 'hooks';
 import { RestrictedRoute } from './RestrictedRoute';
@@ -51,4 +47,4 @@ export function App() {
       </Route>
     </Routes>
   );
-}
+};
