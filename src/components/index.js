@@ -8,4 +8,3 @@ export { AppBar } from './AppBar/AppBar';
 export { AuthNav } from './AuthNav/authNav';
 export { UserMenu } from './UserMenu/UserMenu';
 export { Footer } from './Footer/footer';
-

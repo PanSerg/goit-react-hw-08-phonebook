@@ -2,10 +2,14 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchContacts } from "redux/operations";
 import { selectContacts, selectError, selectIsLoading } from "redux/selectors";
-import { ContactForm } from "components/ContactForm/contactForm";
-import { Filter } from '../components/Filter/filter';
+import { Filter } from 'components';
 import { ContactsList } from '../components/ContactsList/contactsList';
 import PropTypes from 'prop-types';
+import {ContactForm} from 'components/ContactForm/contactForm'
+
+import Box from '@mui/material/Box';
+import Typography from '@mui/material/Typography';
+import Divider from '@mui/material/Divider';
 
 export const Contacts = () => {
     const dispatch = useDispatch();
@@ -18,22 +22,39 @@ export const Contacts = () => {
     }, [dispatch]);
 
     return (
-        <div>
-            <h2>Ponebook</h2>
-            <ContactForm>
-                <h2>Contacts</h2>
-                {contacts.length ? (
-                    <>
-                       <Filter />
-                       <ContactsList />
-                    </>
-                ) : (
-                        <p>No any contacts in phonebook</p>
-                )}
+        <Box
+         sx={{
+           display: { xs: 'flex' },
+           alignItems: 'center',
+           flexDirection: 'column',
+          }}
+         >
+         <Divider sx={{ width: 1, pt: 2, pb: 1 }}>
+          <Typography variant="h5" sx={{ fontWeight: 700 }}>
+            Phonebook
+          </Typography>
+         </Divider>
 
-                {isLoading && !error && <h2>Loading...</h2>}
-            </ContactForm>
-        </div>
+          <ContactForm />
+
+          <Divider sx={{ width: 1, pt: 2, pb: 1 }}>
+            <Typography variant="h5" sx={{ fontWeight: 700 }}>
+              Contacts
+            </Typography>
+          </Divider>
+          {contacts.length ? (
+            <>
+              <Filter />
+              <ContactsList />
+            </>
+          ) : (
+            <p>No any contacts in phonebook</p>
+          )}
+
+          {isLoading && !error && <h2>Loading...</h2>}
+
+          <Divider sx={{ width: 1, pt: 2, pb: 1 }} />
+        </Box>
     );
 };
 
