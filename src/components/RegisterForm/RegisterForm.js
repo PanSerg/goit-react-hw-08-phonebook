@@ -1,10 +1,10 @@
 import { useDispatch } from "react-redux";
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { register } from 'redux/auth/auth-operations';
-import Box from '@mui/material/Box';
-
-import { TextField } from 'formik-mui';
 import * as Yup from 'yup';
+
+import Box from '@mui/material/Box';
+import { TextField } from 'formik-mui';
 import Button from '@mui/material/Button';
 
 const SubmitSchema = Yup.object().shape({

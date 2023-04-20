@@ -1,5 +1,5 @@
 import { useAuth } from 'hooks';
-import { AppNav, UserMenu, AuthNav } from 'components';
+import { UserMenu, AuthNav } from 'components';
 
 import AppBar from '@mui/material/AppBar';
 import Container from '@mui/material/Container';
@@ -11,7 +11,7 @@ export function Header() {
       <AppBar position="fixed">
         <Container maxWidth="md">
           <Toolbar disableGutters>
-            <AppNav />
+            
             {isLoggedIn ? <UserMenu /> : <AuthNav />}
           </Toolbar>
         </Container>

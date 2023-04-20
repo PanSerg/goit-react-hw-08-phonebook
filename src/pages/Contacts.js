@@ -3,9 +3,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchContacts } from "redux/operations";
 import { selectContacts, selectError, selectIsLoading } from "redux/selectors";
 import { Filter } from 'components';
-import { ContactsList } from '../components/ContactsList/contactsList';
+import { ContactsList } from 'components';
 import PropTypes from 'prop-types';
-import {ContactForm} from 'components/ContactForm/contactForm'
+import { ContactForm } from 'components';
 
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';

@@ -2,15 +2,14 @@ import { Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
 import { Container } from '@mui/material';
 import { CssBaseline } from '@mui/material';
-import { Footer } from 'components/Footer/footer';
+import { Footer } from 'components';
 import { useAuth } from 'hooks';
-import { AppBar } from 'components/AppBar/AppBar';
-import { AuthNav } from 'components/AuthNav/authNav';
+import { AppBar } from 'components';
+import { AuthNav } from 'components';
 
 export const Layout = () => {
   const { isLoggedIn } = useAuth();
   //  console.log('isLoggedIn', isLoggedIn);
-
   return (
     <>
       <CssBaseline />
